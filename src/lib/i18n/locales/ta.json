@@ -1,0 +1,185 @@
+{
+  "common": {
+    "appName": "சிற்பி",
+    "continue": "தொடரவும்",
+    "back": "பின் செல்",
+    "next": "அடுத்து",
+    "save": "சேமிக்கவும்",
+    "cancel": "ரத்துசெய்",
+    "done": "முடிந்தது",
+    "loading": "ஏற்றுகிறது...",
+    "error": "பிழை ஏற்பட்டது",
+    "retry": "மீண்டும் முயற்சிக்கவும்",
+    "yes": "ஆம்",
+    "no": "இல்லை",
+    "notSet": "குறிப்பிடப்படவில்லை",
+    "step": "படி",
+    "optional": "(விருப்பத்திற்குரியது)",
+    "comingSoon": "விரைவில் வருகிறது"
+  },
+  "languageSelect": {
+    "title": "உங்கள் மொழியைத் தேர்ந்தெடுக்கவும்",
+    "subtitle": "இதை அமைப்புகளில் எப்போது வேண்டுமானாலும் மாற்றலாம்",
+    "english": "English",
+    "tamil": "தமிழ்"
+  },
+  "auth": {
+    "title": "உள்நுழைக",
+    "subtitle": "தொடர உங்கள் தொலைபேசி எண்ணை உள்ளிடவும்",
+    "phoneLabel": "தொலைபேசி எண்",
+    "phonePlaceholder": "எ.கா. 9876543210",
+    "phoneInvalid": "சரியான தொலைபேசி எண்ணை உள்ளிடவும்"
+  },
+  "onboarding": {
+    "title": "உங்கள் சுயவிவரத்தை உருவாக்குங்கள்",
+    "steps": {
+      "personal": "தனிப்பட்ட விவரங்கள்",
+      "photos": "புகைப்படங்கள்",
+      "horoscope": "ஜாதக விவரங்கள்",
+      "family": "குடும்ப விவரங்கள்",
+      "preferences": "துணை விருப்பங்கள்"
+    },
+    "personal": {
+      "title": "தனிப்பட்ட விவரங்கள்",
+      "fullName": "முழுப்பெயர்",
+      "fullNamePlaceholder": "உங்கள் முழுப்பெயரை உள்ளிடவும்",
+      "gender": "பாலினம்",
+      "genderMale": "ஆண்",
+      "genderFemale": "பெண்",
+      "dateOfBirth": "பிறந்த தேதி",
+      "timeOfBirth": "பிறந்த நேரம்",
+      "timeOfBirthOptional": "பிறந்த நேரம் (விருப்பத்திற்குரியது)",
+      "profileOwnerRelation": "இந்த சுயவிவரத்தை உருவாக்குபவர் யார்?",
+      "relationSelf": "நானே",
+      "relationParent": "பெற்றோர்",
+      "relationSibling": "உடன்பிறப்பு",
+      "relationRelative": "உறவினர்",
+      "maritalStatus": "திருமண நிலை",
+      "maritalNeverMarried": "திருமணமாகவில்லை",
+      "maritalDivorced": "விவாகரத்து",
+      "maritalWidowed": "விதவை/விதவன்",
+      "height": "உயரம் (செ.மீ)",
+      "motherTongue": "தாய்மொழி",
+      "religion": "மதம்",
+      "caste": "சாதி",
+      "subCaste": "உட்பிரிவு",
+      "education": "கல்வி",
+      "occupation": "தொழில்",
+      "annualIncome": "வருடாந்திர வருமான வரம்பு",
+      "city": "நகரம்",
+      "district": "மாவட்டம்",
+      "state": "மாநிலம்",
+      "country": "நாடு",
+      "aboutMeEn": "என்னைப் பற்றி (ஆங்கிலத்தில்)",
+      "aboutMeTa": "என்னைப் பற்றி (தமிழில்)",
+      "validation": {
+        "fullNameRequired": "முழுப்பெயர் அவசியம்",
+        "genderRequired": "பாலினத்தைத் தேர்ந்தெடுக்கவும்",
+        "dateOfBirthRequired": "பிறந்த தேதி அவசியம்",
+        "dateOfBirthInvalid": "சரியான தேதியை உள்ளிடவும் (YYYY-MM-DD)",
+        "dateOfBirthTooYoung": "வயது 18க்கு மேல் இருக்க வேண்டும்",
+        "cityRequired": "நகரம் அவசியம்",
+        "numberInvalid": "சரியான எண்ணை உள்ளிடவும்"
+      }
+    },
+    "photos": {
+      "title": "புகைப்படங்கள்",
+      "subtitle": "தொடர குறைந்தது ஒரு புகைப்படத்தையாவது சேர்க்கவும்",
+      "addPhoto": "புகைப்படம் சேர்க்கவும்",
+      "primaryPhoto": "முதன்மை புகைப்படம்",
+      "setPrimary": "முதன்மையாக அமைக்கவும்",
+      "remove": "நீக்கு",
+      "atLeastOneRequired": "தொடர குறைந்தது ஒரு புகைப்படம் தேவை",
+      "uploading": "பதிவேற்றுகிறது...",
+      "uploadError": "பதிவேற்றத்தில் பிழை, மீண்டும் முயற்சிக்கவும்"
+    },
+    "horoscope": {
+      "title": "ஜாதக விவரங்கள்",
+      "star": "நட்சத்திரம்",
+      "raasi": "ராசி",
+      "lagnam": "லக்னம்",
+      "chevvaiDosham": "செவ்வாய் தோஷம்",
+      "birthPlace": "பிறந்த இடம்",
+      "horoscopeImage": "ஜாதக படம் (விருப்பத்திற்குரியது)",
+      "uploadChart": "ஜாதகப் படத்தை பதிவேற்றவும்"
+    },
+    "family": {
+      "title": "குடும்ப விவரங்கள்",
+      "fatherName": "தந்தையின் பெயர்",
+      "fatherOccupation": "தந்தையின் தொழில்",
+      "motherName": "தாயாரின் பெயர்",
+      "motherOccupation": "தாயாரின் தொழில்",
+      "siblingsCount": "உடன்பிறப்புகளின் எண்ணிக்கை",
+      "familyType": "குடும்ப வகை",
+      "familyTypeNuclear": "தனிக் குடும்பம்",
+      "familyTypeJoint": "கூட்டுக் குடும்பம்",
+      "familyValues": "குடும்ப விழுமியங்கள்",
+      "familyValuesTraditional": "பாரம்பரியமான",
+      "familyValuesModerate": "மிதமான",
+      "familyValuesLiberal": "சுதந்திரமான"
+    },
+    "preferences": {
+      "title": "துணை விருப்பங்கள்",
+      "ageRange": "வயது வரம்பு",
+      "ageMin": "குறைந்தபட்ச வயது",
+      "ageMax": "அதிகபட்ச வயது",
+      "heightRange": "உயர வரம்பு (செ.மீ)",
+      "heightMin": "குறைந்தபட்ச உயரம்",
+      "heightMax": "அதிகபட்ச உயரம்",
+      "preferredReligion": "விருப்பமான மதம்",
+      "preferredCaste": "விருப்பமான சாதி",
+      "preferredEducation": "விருப்பமான கல்வி",
+      "preferredLocation": "விருப்பமான இடம்",
+      "finish": "சுயவிவரத்தை முடிக்கவும்"
+    }
+  },
+  "profileDetail": {
+    "family": "குடும்பம்",
+    "horoscope": "ஜாதகம்",
+    "partnerPreferences": "துணை விருப்பங்கள்"
+  },
+  "profileTab": {
+    "title": "எனது சுயவிவரம்",
+    "saved": "சேமிக்கப்பட்டது"
+  },
+  "thankYou": {
+    "title": "நன்றி!",
+    "subtitle": "உங்கள் சுயவிவரம் சமர்ப்பிக்கப்பட்டது. எங்கள் குழு அதை பரிசீலித்து உங்கள் குடும்பத்தை நேரடியாக தொடர்பு கொள்ளும்.",
+    "viewProfile": "எனது சுயவிவரத்தைக் காண / திருத்த"
+  },
+  "admin": {
+    "login": {
+      "title": "நிர்வாக உள்நுழைவு",
+      "subtitle": "உங்கள் நிர்வாக மின்னஞ்சல் மற்றும் கடவுச்சொல்லுடன் உள்நுழையவும்",
+      "emailLabel": "மின்னஞ்சல்",
+      "emailPlaceholder": "admin@example.com",
+      "passwordLabel": "கடவுச்சொல்",
+      "signIn": "உள்நுழையவும்",
+      "emailInvalid": "சரியான மின்னஞ்சலை உள்ளிடவும்",
+      "passwordRequired": "கடவுச்சொல் அவசியம்"
+    },
+    "dashboard": {
+      "title": "சமர்ப்பணங்கள்",
+      "filters": "வடிகட்டிகள்",
+      "gender": "பாலினம்",
+      "ageRange": "வயது வரம்பு",
+      "religion": "மதம்",
+      "caste": "சாதி",
+      "location": "இடம்",
+      "maritalStatus": "திருமண நிலை",
+      "education": "கல்வி",
+      "clearFilters": "வடிகட்டிகளை அழிக்கவும்",
+      "noResults": "சுயவிவரங்கள் எதுவும் கிடைக்கவில்லை",
+      "logout": "வெளியேறு"
+    },
+    "detail": {
+      "phoneNumber": "தொலைபேசி எண்",
+      "contactStatus": "தொடர்பு நிலை",
+      "statusNotContacted": "தொடர்பு கொள்ளப்படவில்லை",
+      "statusContacted": "தொடர்பு கொள்ளப்பட்டது",
+      "statusMatched": "பொருத்தமானது",
+      "statusClosed": "முடிக்கப்பட்டது",
+      "noPhoto": "புகைப்படம் பதிவேற்றப்படவில்லை"
+    }
+  }
+}

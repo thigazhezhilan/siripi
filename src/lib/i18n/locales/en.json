@@ -1,0 +1,185 @@
+{
+  "common": {
+    "appName": "Sirpi",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "cancel": "Cancel",
+    "done": "Done",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "yes": "Yes",
+    "no": "No",
+    "notSet": "Not set",
+    "step": "Step",
+    "optional": "(optional)",
+    "comingSoon": "Coming soon"
+  },
+  "languageSelect": {
+    "title": "Choose your language",
+    "subtitle": "You can change this anytime in settings",
+    "english": "English",
+    "tamil": "தமிழ்"
+  },
+  "auth": {
+    "title": "Sign in",
+    "subtitle": "Enter your phone number to continue",
+    "phoneLabel": "Phone number",
+    "phonePlaceholder": "e.g. 9876543210",
+    "phoneInvalid": "Enter a valid phone number"
+  },
+  "onboarding": {
+    "title": "Create your profile",
+    "steps": {
+      "personal": "Personal details",
+      "photos": "Photos",
+      "horoscope": "Horoscope details",
+      "family": "Family details",
+      "preferences": "Partner preferences"
+    },
+    "personal": {
+      "title": "Personal details",
+      "fullName": "Full name",
+      "fullNamePlaceholder": "Enter your full name",
+      "gender": "Gender",
+      "genderMale": "Male",
+      "genderFemale": "Female",
+      "dateOfBirth": "Date of birth",
+      "timeOfBirth": "Time of birth",
+      "timeOfBirthOptional": "Time of birth (optional)",
+      "profileOwnerRelation": "Who is creating this profile?",
+      "relationSelf": "Myself",
+      "relationParent": "Parent",
+      "relationSibling": "Sibling",
+      "relationRelative": "Relative",
+      "maritalStatus": "Marital status",
+      "maritalNeverMarried": "Never married",
+      "maritalDivorced": "Divorced",
+      "maritalWidowed": "Widowed",
+      "height": "Height (cm)",
+      "motherTongue": "Mother tongue",
+      "religion": "Religion",
+      "caste": "Caste",
+      "subCaste": "Sub-caste",
+      "education": "Education",
+      "occupation": "Occupation",
+      "annualIncome": "Annual income range",
+      "city": "City",
+      "district": "District",
+      "state": "State",
+      "country": "Country",
+      "aboutMeEn": "About me (in English)",
+      "aboutMeTa": "About me (in Tamil)",
+      "validation": {
+        "fullNameRequired": "Full name is required",
+        "genderRequired": "Please select a gender",
+        "dateOfBirthRequired": "Date of birth is required",
+        "dateOfBirthInvalid": "Enter a valid date (YYYY-MM-DD)",
+        "dateOfBirthTooYoung": "Must be 18 years or older",
+        "cityRequired": "City is required",
+        "numberInvalid": "Enter a valid number"
+      }
+    },
+    "photos": {
+      "title": "Photos",
+      "subtitle": "Add at least one photo to continue",
+      "addPhoto": "Add photo",
+      "primaryPhoto": "Primary photo",
+      "setPrimary": "Set as primary",
+      "remove": "Remove",
+      "atLeastOneRequired": "At least one photo is required to continue",
+      "uploading": "Uploading...",
+      "uploadError": "Upload failed, please try again"
+    },
+    "horoscope": {
+      "title": "Horoscope details",
+      "star": "Star (Natchathiram)",
+      "raasi": "Raasi",
+      "lagnam": "Lagnam",
+      "chevvaiDosham": "Chevvai dosham",
+      "birthPlace": "Birth place",
+      "horoscopeImage": "Horoscope chart (optional)",
+      "uploadChart": "Upload chart image"
+    },
+    "family": {
+      "title": "Family details",
+      "fatherName": "Father's name",
+      "fatherOccupation": "Father's occupation",
+      "motherName": "Mother's name",
+      "motherOccupation": "Mother's occupation",
+      "siblingsCount": "Number of siblings",
+      "familyType": "Family type",
+      "familyTypeNuclear": "Nuclear",
+      "familyTypeJoint": "Joint",
+      "familyValues": "Family values",
+      "familyValuesTraditional": "Traditional",
+      "familyValuesModerate": "Moderate",
+      "familyValuesLiberal": "Liberal"
+    },
+    "preferences": {
+      "title": "Partner preferences",
+      "ageRange": "Age range",
+      "ageMin": "Min age",
+      "ageMax": "Max age",
+      "heightRange": "Height range (cm)",
+      "heightMin": "Min height",
+      "heightMax": "Max height",
+      "preferredReligion": "Preferred religion",
+      "preferredCaste": "Preferred caste",
+      "preferredEducation": "Preferred education",
+      "preferredLocation": "Preferred location",
+      "finish": "Finish profile"
+    }
+  },
+  "profileDetail": {
+    "family": "Family",
+    "horoscope": "Horoscope",
+    "partnerPreferences": "Partner preferences"
+  },
+  "profileTab": {
+    "title": "My Profile",
+    "saved": "Saved"
+  },
+  "thankYou": {
+    "title": "Thank you!",
+    "subtitle": "Your profile has been submitted. Our team will review it and contact your family directly.",
+    "viewProfile": "View / Edit My Profile"
+  },
+  "admin": {
+    "login": {
+      "title": "Admin Login",
+      "subtitle": "Sign in with your admin email and password",
+      "emailLabel": "Email",
+      "emailPlaceholder": "admin@example.com",
+      "passwordLabel": "Password",
+      "signIn": "Sign In",
+      "emailInvalid": "Enter a valid email",
+      "passwordRequired": "Password is required"
+    },
+    "dashboard": {
+      "title": "Submissions",
+      "filters": "Filters",
+      "gender": "Gender",
+      "ageRange": "Age range",
+      "religion": "Religion",
+      "caste": "Caste",
+      "location": "Location",
+      "maritalStatus": "Marital status",
+      "education": "Education",
+      "clearFilters": "Clear filters",
+      "noResults": "No profiles found",
+      "logout": "Log out"
+    },
+    "detail": {
+      "phoneNumber": "Phone number",
+      "contactStatus": "Contact status",
+      "statusNotContacted": "Not contacted",
+      "statusContacted": "Contacted",
+      "statusMatched": "Matched",
+      "statusClosed": "Closed",
+      "noPhoto": "No photo uploaded"
+    }
+  }
+}
