@@ -3,36 +3,38 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { FormTextField } from "@/components/form/FormTextField";
-import { devLoginWithPhone } from "@/lib/auth/devLogin";
-import { PhoneFormValues, phoneSchema } from "@/lib/validation/authSchema";
+import { signInOrSignUpWithPhone } from "@/lib/auth/phoneAuth";
+import { PhoneAuthFormValues, phoneAuthSchema } from "@/lib/validation/authSchema";
 
 export default function AuthPage() {
   const { t } = useTranslation();
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [showPassword, setShowPassword] = useState(false);
 
-  const { control, handleSubmit } = useForm<PhoneFormValues>({
-    resolver: zodResolver(phoneSchema),
-    defaultValues: { phoneNumber: "" },
+  const { control, handleSubmit } = useForm<PhoneAuthFormValues>({
+    resolver: zodResolver(phoneAuthSchema),
+    defaultValues: { phoneNumber: "", password: "" },
   });
 
-  const onSubmit = handleSubmit(async ({ phoneNumber }) => {
+  const onSubmit = handleSubmit(async ({ phoneNumber, password }) => {
     setSubmitting(true);
     setSubmitError(null);
     try {
-      const { hasProfile, isActive } = await devLoginWithPhone(phoneNumber);
+      const { hasProfile, isActive } = await signInOrSignUpWithPhone(phoneNumber, password);
       if (hasProfile && isActive) {
         router.replace("/profile");
       } else {
         router.replace("/onboarding/personal");
       }
     } catch (error) {
-      setSubmitError(error instanceof Error ? error.message : String(error));
+      const message = error instanceof Error ? error.message : String(error);
+      setSubmitError(message === "auth.incorrectPassword" ? t("auth.incorrectPassword") : message);
     } finally {
       setSubmitting(false);
     }
@@ -52,6 +54,40 @@ export default function AuthPage() {
             placeholder={t("auth.phonePlaceholder")}
             type="tel"
             autoFocus
+          />
+
+          <Controller
+            control={control}
+            name="password"
+            render={({ field: { onChange, onBlur, value }, fieldState: { error } }) => (
+              <div className="mb-4">
+                <label className="mb-1 block text-sm font-medium text-sirpi-text">
+                  {t("auth.passwordLabel")}
+                </label>
+                <div
+                  className={`flex items-center rounded-lg border bg-sirpi-surface transition-colors duration-150 ${
+                    error ? "border-sirpi-primary" : "border-sirpi-border"
+                  }`}
+                >
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    value={value}
+                    onChange={(e) => onChange(e.target.value)}
+                    onBlur={onBlur}
+                    placeholder={t("auth.passwordPlaceholder")}
+                    className="w-full rounded-lg bg-transparent px-4 py-2 text-base text-sirpi-text outline-none placeholder:text-sirpi-muted"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword((prev) => !prev)}
+                    className="shrink-0 px-3 text-xs font-semibold text-sirpi-primary"
+                  >
+                    {showPassword ? t("auth.hidePassword") : t("auth.showPassword")}
+                  </button>
+                </div>
+                {error?.message ? <p className="mt-1 text-xs text-sirpi-primary">{t(error.message)}</p> : null}
+              </div>
+            )}
           />
 
           {submitError ? (

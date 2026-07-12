@@ -30,7 +30,13 @@
     "subtitle": "Enter your phone number to continue",
     "phoneLabel": "Phone number",
     "phonePlaceholder": "e.g. 9876543210",
-    "phoneInvalid": "Enter a valid phone number"
+    "phoneInvalid": "Enter a valid phone number",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "passwordTooShort": "Password must be at least 6 characters",
+    "showPassword": "Show",
+    "hidePassword": "Hide",
+    "incorrectPassword": "Incorrect password for this phone number"
   },
   "onboarding": {
     "title": "Create your profile",

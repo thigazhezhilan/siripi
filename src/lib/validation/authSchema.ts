@@ -1,10 +1,11 @@
 import { z } from 'zod';
 
-export const phoneSchema = z.object({
+export const phoneAuthSchema = z.object({
   phoneNumber: z
     .string()
     .trim()
     .regex(/^\+?\d{10,13}$/, 'auth.phoneInvalid'),
+  password: z.string().min(6, 'auth.passwordTooShort'),
 });
 
-export type PhoneFormValues = z.infer<typeof phoneSchema>;
+export type PhoneAuthFormValues = z.infer<typeof phoneAuthSchema>;

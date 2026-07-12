@@ -3,19 +3,33 @@
 import { Noto_Sans_Tamil } from "next/font/google";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { setLanguage, type SupportedLanguage } from "@/lib/i18n";
+import { getStoredLanguage, setLanguage, type SupportedLanguage } from "@/lib/i18n";
 
 const notoSansTamil = Noto_Sans_Tamil({ subsets: ["tamil"], weight: ["400", "700"] });
 
 export default function LanguageSelectPage() {
   const { t } = useTranslation();
   const router = useRouter();
+  const [checkingStoredLanguage, setCheckingStoredLanguage] = useState(true);
+
+  useEffect(() => {
+    if (getStoredLanguage()) {
+      router.replace("/auth");
+    } else {
+      setCheckingStoredLanguage(false);
+    }
+  }, [router]);
 
   function handleSelect(language: SupportedLanguage) {
     setLanguage(language);
     router.push("/auth");
+  }
+
+  if (checkingStoredLanguage) {
+    return <div className="flex flex-1 bg-sirpi-bg" />;
   }
 
   return (
