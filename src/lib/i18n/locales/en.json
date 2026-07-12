@@ -20,6 +20,8 @@
   "languageSelect": {
     "title": "Choose your language",
     "subtitle": "You can change this anytime in settings",
+    "welcome": "Welcome to Sirpi",
+    "appFullName": "Sirpi Matrimony",
     "english": "English",
     "tamil": "தமிழ்"
   },
