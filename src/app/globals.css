@@ -10,6 +10,14 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Sirpi brand tokens, ported from matrimony_apk/src/constants/theme.ts */
+  --color-sirpi-bg: #ffffff;
+  --color-sirpi-surface: #f7f2ec;
+  --color-sirpi-primary: #8a1538;
+  --color-sirpi-text: #1c1c1c;
+  --color-sirpi-muted: #6b6b6b;
+  --color-sirpi-border: #e4dcd2;
 }
 
 @media (prefers-color-scheme: dark) {
