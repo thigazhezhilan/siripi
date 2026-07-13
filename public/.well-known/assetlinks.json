@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.sirpi.matrimony",
+      "sha256_cert_fingerprints": [
+        "25:10:C6:86:27:54:FE:D7:A6:A9:DA:4A:7B:43:10:E5:EA:92:4A:8D:DA:2C:B8:0B:55:28:36:44:E8:90:A2:F4"
+      ]
+    }
+  }
+]
