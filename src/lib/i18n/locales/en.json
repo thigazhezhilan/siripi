@@ -18,25 +18,31 @@
     "comingSoon": "Coming soon"
   },
   "languageSelect": {
-    "title": "Choose your language",
-    "subtitle": "You can change this anytime in settings",
     "welcome": "Welcome to Sirpi",
     "appFullName": "Sirpi Matrimony",
     "english": "English",
     "tamil": "தமிழ்"
   },
   "auth": {
-    "title": "Sign in",
-    "subtitle": "Enter your phone number to continue",
-    "phoneLabel": "Phone number",
+    "newUserTab": "New User / புதிய பயனர்",
+    "loginTab": "Already Registered / ஏற்கனவே பதிவுசெய்தவர்",
+    "phoneLabel": "Phone Number / தொலைபேசி எண்",
     "phonePlaceholder": "e.g. 9876543210",
-    "phoneInvalid": "Enter a valid phone number",
-    "passwordLabel": "Password",
-    "passwordPlaceholder": "Enter your password",
-    "passwordTooShort": "Password must be at least 6 characters",
-    "showPassword": "Show",
-    "hidePassword": "Hide",
-    "incorrectPassword": "Incorrect password for this phone number"
+    "phoneInvalid": "Enter a valid phone number / சரியான தொலைபேசி எண்ணை உள்ளிடவும்",
+    "passwordLabel": "Password / கடவுச்சொல்",
+    "passwordPlaceholder": "Enter your password / உங்கள் கடவுச்சொல்லை உள்ளிடவும்",
+    "passwordTooShort": "Password must be at least 6 characters / கடவுச்சொல் குறைந்தது 6 எழுத்துகள் இருக்க வேண்டும்",
+    "passwordRequired": "Password is required / கடவுச்சொல் அவசியம்",
+    "confirmPasswordLabel": "Confirm Password / கடவுச்சொல்லை உறுதிப்படுத்தவும்",
+    "passwordMismatch": "Passwords do not match / கடவுச்சொற்கள் பொருந்தவில்லை",
+    "chooseLanguageLabel": "Choose Language / மொழியைத் தேர்ந்தெடுக்கவும்",
+    "languageRequired": "Please choose a language / மொழியைத் தேர்ந்தெடுக்கவும்",
+    "showPassword": "Show / காட்டு",
+    "hidePassword": "Hide / மறை",
+    "registerButton": "Register / பதிவு செய்யவும்",
+    "loginButton": "Login / உள்நுழையவும்",
+    "loginFailed": "Incorrect phone number or password / தவறான தொலைபேசி எண் அல்லது கடவுச்சொல்",
+    "phoneAlreadyRegistered": "This phone number is already registered. Please use Login instead. / இந்த தொலைபேசி எண் ஏற்கனவே பதிவு செய்யப்பட்டுள்ளது. தயவுசெய்து உள்நுழையவும்."
   },
   "onboarding": {
     "title": "Create your profile",

@@ -8,11 +8,11 @@
 // (Authentication -> Providers -> Email) — sign-up uses a synthetic address
 // nobody can read, so there's no inbox to click a confirmation link from.
 //
-// New vs. existing account is not asked explicitly (see auth/page.tsx): we
-// try signInWithPassword first, and only attempt signUp if that fails. This
-// avoids a separate "does this phone exist" lookup, which would let anyone
-// probe which phone numbers are registered.
+// New vs. existing account is now an explicit choice made on the landing
+// page (New User / Already Registered tabs), so register/login map directly
+// to signUp/signInWithPassword — no probing needed to infer intent.
 
+import type { SupportedLanguage } from "../i18n";
 import { supabase } from "../supabase";
 
 // Supabase's email validator rejects reserved/special-use TLDs (.local, .test,
@@ -28,40 +28,54 @@ function phoneToSyntheticEmail(phoneNumber: string): string {
   return `${normalizePhone(phoneNumber)}@${SYNTHETIC_EMAIL_DOMAIN}`;
 }
 
-export type PhoneAuthResult = {
+function isSupportedLanguage(value: unknown): value is SupportedLanguage {
+  return value === "en" || value === "ta";
+}
+
+export async function registerWithPhone(
+  phoneNumber: string,
+  password: string,
+  language: SupportedLanguage
+): Promise<void> {
+  const email = phoneToSyntheticEmail(phoneNumber);
+  const { data, error } = await supabase.auth.signUp({ email, password });
+
+  if (error) {
+    if (/already registered|already exists/i.test(error.message)) {
+      throw new Error("auth.phoneAlreadyRegistered");
+    }
+    throw error;
+  }
+
+  if (!data.session) {
+    throw new Error(
+      "Sign-up succeeded but no session was returned — check that 'Confirm email' is disabled " +
+        "under Authentication > Providers > Email in the Supabase dashboard."
+    );
+  }
+
+  // Stored on the auth user (not the `profiles` row, which doesn't exist until
+  // onboarding's personal-details step creates it) so the language preference
+  // survives a login from a fresh device/browser with no localStorage.
+  const { error: metadataError } = await supabase.auth.updateUser({
+    data: { phone_number: phoneNumber, preferred_language: language },
+  });
+  if (metadataError) throw metadataError;
+}
+
+export type LoginResult = {
   hasProfile: boolean;
   isActive: boolean;
+  preferredLanguage: SupportedLanguage | null;
 };
 
-export async function signInOrSignUpWithPhone(
-  phoneNumber: string,
-  password: string
-): Promise<PhoneAuthResult> {
+export async function loginWithPhone(phoneNumber: string, password: string): Promise<LoginResult> {
   const email = phoneToSyntheticEmail(phoneNumber);
-
-  const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
-
-  if (signInError) {
-    const { data: signUpData, error: signUpError } = await supabase.auth.signUp({ email, password });
-
-    if (signUpError) {
-      if (/already registered|already exists/i.test(signUpError.message)) {
-        throw new Error("auth.incorrectPassword");
-      }
-      throw signUpError;
-    }
-
-    if (!signUpData.session) {
-      throw new Error(
-        "Sign-up succeeded but no session was returned — check that 'Confirm email' is disabled " +
-          "under Authentication > Providers > Email in the Supabase dashboard."
-      );
-    }
-
-    const { error: metadataError } = await supabase.auth.updateUser({
-      data: { phone_number: phoneNumber },
-    });
-    if (metadataError) throw metadataError;
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) {
+    // Deliberately generic — same reasoning Supabase's own error message
+    // follows — so this can't be used to probe which phone numbers exist.
+    throw new Error("auth.loginFailed");
   }
 
   const { data: userData, error: userError } = await supabase.auth.getUser();
@@ -76,8 +90,11 @@ export async function signInOrSignUpWithPhone(
     .maybeSingle();
   if (profileError) throw profileError;
 
+  const storedLanguage = userData.user.user_metadata?.preferred_language;
+
   return {
     hasProfile: profile !== null,
     isActive: profile?.status === "active",
+    preferredLanguage: isSupportedLanguage(storedLanguage) ? storedLanguage : null,
   };
 }
